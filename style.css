@@ -1,0 +1,128 @@
+@import url('https://fonts.maateen.me/kalpurush/font.css');
+
+*,
+:after,
+:before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box
+}
+
+body {
+	background-color: orange
+}
+
+.first-container {
+	width: 100%;
+	min-width: 450px;
+	position: absolute;
+	transform: translate(-10%, -50%);
+	left: 10%;
+	top: 10%;
+	padding: 50px 30px
+}
+
+.fourth-container,
+.main-container,
+.second-container {
+	transform: translate(-50%, -50%);
+	left: 50%
+}
+
+.fifth-container *,
+.first-container *,
+.fourth-container *,
+.main-container *,
+.second-container * {
+	font-family: Ubuntu, sans-serif;
+	border: none;
+	outline: 0
+}
+
+.fifth-wrapper div,
+.first-wrapper div,
+.fourth-wrapper div,
+.main-wrapper div,
+.second-wrapper div {
+	height: 100px;
+	background-color: #080808;
+	border-radius: 5px;
+	color: #fff;
+	display: grid;
+	place-items: center;
+	padding: 20px 0;
+	box-shadow: 0 15px 20px rgba(0, 0, 0, .3)
+}
+
+.fifth-wrapper,
+.first-wrapper,
+.fourth-wrapper,
+.main-wrapper,
+.second-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: space-between
+}
+
+.fifth-wrapper div,
+.first-wrapper div {
+	width: 350px
+}
+
+.second-container {
+	width: 22%;
+	min-width: 200px;
+	position: absolute;
+	top: 30%;
+	padding: 50px 30px
+}
+
+.fifth-container,
+.fourth-container,
+.main-container {
+	min-width: 450px;
+	position: absolute;
+	padding: 50px 30px
+}
+
+.fourth-wrapper div,
+.main-wrapper div,
+.second-wrapper div {
+	width: 100px
+}
+
+.main-container {
+	width: 60%;
+	top: 50%
+}
+
+.fourth-container {
+	width: 30%;
+	top: 70%
+}
+
+.fifth-container {
+	width: 100%;
+	transform: translate(-10%, -50%);
+	left: 10%;
+	top: 90%
+}
+
+span {
+	font-size: 30px;
+	font-weight: 500
+}
+
+p {
+	font-size: 14px;
+	color: #707070;
+	font-weight: 400
+}
+
+#b-hijri,
+#c-hijri,
+.b-bongabdo,
+.c-bongabdo {
+	font-family: 'Kalpurush', sans-serif;
+	font-size: 36px
+}

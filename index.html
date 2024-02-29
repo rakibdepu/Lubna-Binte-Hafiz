@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta charset="UTF-8">
+	<title>Lubna Bint Hafiz</title>
+	<!--Google Font-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+	<!--Stylesheet-->
+	<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="first-container">
+			<div class="first-wrapper">
+				<div>
+					<span id="b-hijri"></span>
+				</div>
+				<div>
+					<span id="b-gregorian"></span>
+				</div>
+				<div>
+					<span class="b-bongabdo"></span>
+				</div>
+			</div>
+		</div>
+		<div class="second-container">
+			<div class="second-wrapper">
+				<div>
+					<span id="b-hours"> - </span>
+					<p> Hours </p>
+				</div>
+				<div>
+					<span id="b-minutes"> - </span>
+					<p> Minutes </p>
+				</div>
+			</div>
+		</div>
+		<div class="main-container">
+			<div class="main-wrapper">
+				<div>
+					<span id="years"> - </span>
+					<p> Years </p>
+				</div>
+				<div>
+					<span id="months"> - </span>
+					<p> Months </p>
+				</div>
+				<div>
+					<span id="days"> - </span>
+					<p> Days </p>
+				</div>
+				<div>
+					<span id="hours"> - </span>
+					<p> Hours </p>
+				</div>
+				<div>
+					<span id="minutes"> - </span>
+					<p> Minutes </p>
+				</div>
+				<div>
+					<span id="seconds"> - </span>
+					<p> Seconds </p>
+				</div>
+			</div>
+		</div>
+		<div class="fourth-container">
+			<div class="fourth-wrapper">
+				<div>
+					<span id="c-hours"> - </span>
+					<p> Hours </p>
+				</div>
+				<div>
+					<span id="c-minutes"> - </span>
+					<p> Minutes </p>
+				</div>
+				<div>
+					<span id="c-seconds"> - </span>
+					<p> Seconds </p>
+				</div>
+			</div>
+		</div>
+		<div class="fifth-container">
+			<div class="fifth-wrapper">
+				<div>
+					<span id="c-hijri"></span>
+				</div>
+				<div>
+					<span id="c-gregorian"></span>
+				</div>
+				<div>
+					<span class="c-bongabdo"></span>
+				</div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="jquery.bongabdo.js"></script>
+		<script src="script.js"></script>
+		<script type="text/javascript">
+			const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			const d = new Date();
+			const b = new Date("2023-02-22T02:27:00Z");
+			cyear = d.getFullYear();
+			byear = b.getFullYear();
+			let cmonth = months[d.getMonth()];
+			let bmonth = months[b.getMonth()];
+			cday = d.getDate();
+			bday = b.getDate();
+			document.getElementById("c-hours").innerHTML = d.getHours();
+			document.getElementById("b-hours").innerHTML = b.getHours();
+			document.getElementById("c-minutes").innerHTML = d.getMinutes();
+			document.getElementById("b-minutes").innerHTML = b.getMinutes();
+			document.getElementById("c-seconds").innerHTML = d.getSeconds();
+			document.getElementById("c-gregorian").innerHTML = cmonth + " " + cday + ", " + cyear;
+			document.getElementById("b-gregorian").innerHTML = bmonth + " " + bday + ", " + byear;
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.b-bongabdo').bongabdo({
+					date: '2023-02-22',
+					format: "MM DD, YY"
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.c-bongabdo').bongabdo({
+					format: "MM DD, YY"
+				});
+			});
+		</script>
+		<script type="text/javascript">
+			function myHijriDateFormat(date) {
+				let startDate = new Date(date),
+					c = 'bn-u-ca-islamic-umalqura-nu-beng', // use 'islamic-umalqura' calendar for the islamic date
+					n1 = 'numeric',
+					n2 = '2-digit',
+					iDay = new Intl.DateTimeFormat(c, {
+						day: n2
+					}).format(startDate),
+					iMonth = new Intl.DateTimeFormat(c, {
+						month: 'long'
+					}).format(startDate),
+					iYear = new Intl.DateTimeFormat(c, {
+						year: n1
+					}).format(startDate).split(" ")[0];
+				return iMonth + " " + iDay + ", " + iYear;
+			}
+			document.getElementById("c-hijri").innerHTML = myHijriDateFormat(new Date(Date.now()));
+			document.getElementById("b-hijri").innerHTML = myHijriDateFormat("2023-02-22");
+		</script>
+	</body>
+</html>
